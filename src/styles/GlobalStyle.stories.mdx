@@ -1,7 +1,7 @@
 import { Meta, Preview, Story } from "@storybook/addon-docs/blocks";
-import { GlobalStyle } from "./GlobalStyle.js";
+import GlobalStyle from "./GlobalStyle";
 
-<Meta title="Styles/GlobalStyle" components={GlobalStyle} />
+<Meta title="Styles/GlobalStyle" component={GlobalStyle} />
 
 # Global Style
 
@@ -18,11 +18,11 @@ const App = () => (
 
 ## Typography
 
-Basic Global Typography
+Basic global typography.
 
 ### Headings
 
-All html headings, `<h1>` through `<h6>`, are available
+All HTML headings, `<h1>` through `<h6>`, are available:
 
 <Preview>
   <Story name="Headings">
@@ -39,7 +39,7 @@ All html headings, `<h1>` through `<h6>`, are available
 
 ### Paragraph
 
-Styling for common text elements.
+Styling for common text elements:
 
 <Preview>
   <Story name="Paragraph">

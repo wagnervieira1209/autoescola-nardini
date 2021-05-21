@@ -1,8 +1,11 @@
 import React from "react";
+import { text } from "@storybook/addon-knobs";
 
 import Hero from "./Hero";
-import bgStreetImage from "../stories/assets/street.jpg";
+import BgHighwayImage from "../stories/assets/street.jpg";
+import BgCarImage from "../stories/assets/street.jpg";
 import Heading from "./Heading";
+import Button from "./Button";
 
 export default {
     title: "Components/Hero",
@@ -10,16 +13,14 @@ export default {
 };
 
 export const usage = () => (
-    <Hero image={bgStreetImage}>
-        <Heading>
-            <h1>Ganhe sua liberdade para ir e vir</h1>
-        </Heading>
-        <p>A auto escola líder em aprovação.</p>
+    <Hero image={BgHighwayImage}>
+        <h1>{text("Title", "Ganhe sua liberdade para ir e vir")}</h1>
+        <p>{text("Text", "A auto escola lider em aprovação.")}</p>
     </Hero>
 );
 
 export const withList = () => (
-    <Hero image={bgStreetImage}>
+    <Hero image={BgCarImage}>
         <Heading>
             <h1>
                 Ganhe sua <strong>liberdade</strong>
@@ -28,10 +29,12 @@ export const withList = () => (
             </h1>
         </Heading>
         <ul>
-            <li>loren impsum dolor sit amet</li>
-            <li>loren impsum dolor sit amet</li>
-            <li>loren impsum dolor sit amet</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
         </ul>
-        <button>Matricule-se agora já</button>
+        <Button color="primary" variant="outlined">
+            Matricule-se agora
+        </Button>
     </Hero>
 );

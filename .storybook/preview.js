@@ -1,12 +1,16 @@
 import React from "react";
 import { addDecorator, addParameters } from "@storybook/react";
+import { select } from "@storybook/addon-knobs";
 
 import GlobalStyle from "../src/styles/GlobalStyle";
+import ThemeProvider, { ThemeNames } from "../src/styles/ThemeProvider";
 
 addDecorator((storyFn) => (
     <>
-        <GlobalStyle />
-        {storyFn()}
+        <ThemeProvider theme={select("Theme", ThemeNames, ThemeNames.light)}>
+            <GlobalStyle />
+            {storyFn()}
+        </ThemeProvider>
     </>
 ));
 
@@ -53,13 +57,3 @@ addParameters({
         viewports,
     },
 });
-
-export const parameters = {
-    actions: { argTypesRegex: "^on[A-Z].*" },
-    controls: {
-        matchers: {
-            color: /(background|color)$/i,
-            date: /Date$/,
-        },
-    },
-};

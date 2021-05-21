@@ -1,9 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled, { css } from "styled-components";
-import { BreakAt, BreakpointSizes } from "../styles/Breakpoints";
 
-const colorYellow = "#FFC107";
+import { breakAt, BreakpointSizes } from "styles/Breakpoints";
 
 const Root = styled.div`
     color: #fff;
@@ -29,9 +28,11 @@ const Content = styled.div`
         padding-left: 0;
     }
 
-    li::before {
-        content: "\\2713\\0020";
-        color: ${colorYellow};
+    li {
+        &::before {
+            content: "\\2713\\0020";
+            color: ${(props) => props.theme.colors.primary.main};
+        }
     }
 `;
 
@@ -39,18 +40,18 @@ const Container = styled.div`
     width: 100%;
     padding: 0 8px;
 
-    ${BreakAt(BreakpointSizes.sm)} {
+    ${breakAt(BreakpointSizes.sm)} {
         padding: 0 16px;
     }
 
-    ${BreakAt(BreakpointSizes.lg)} {
+    ${breakAt(BreakpointSizes.lg)} {
         width: 1140px;
         padding: 0;
         margin: 0 auto;
     }
 `;
 
-const Hero = ({ image, title, children }) => (
+const Hero = ({ image, children }) => (
     <Root image={image} data-testid="hero">
         <Container>
             <Content>{children}</Content>
@@ -64,12 +65,11 @@ Hero.propTypes = {
      **/
     //image: PropTypes.string.isRequired,
     image: PropTypes.string,
-    //children: PropTypes.node,
-    children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+    children: PropTypes.node,
 };
 
-Hero.defaultProps = {
+/*Hero.defaultProps = {
     title: "Meu título",
-};
+};*/
 
 export default Hero;

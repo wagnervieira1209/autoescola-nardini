@@ -1,20 +1,20 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render } from "test-utils";
 
 import Hero from "./Hero";
 
 test("renders Hero with children", () => {
     const { getByText } = render(
         <Hero>
-            <p>Wagner Vieira</p>
+            <p>Bruno Nardini</p>
         </Hero>
     );
 
-    expect(getByText("Wagner Vieira")).toBeInTheDocument();
+    expect(getByText("Bruno Nardini")).toBeInTheDocument();
 });
 
-test("renders Hero image backgroung", () => {
-    const image = "http://testImage.jpg";
+test("renders image background", () => {
+    const image = "http://test/image.jpg";
 
     const { getByTestId } = render(<Hero image={image} />);
 

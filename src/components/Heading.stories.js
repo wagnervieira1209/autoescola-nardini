@@ -1,5 +1,6 @@
 import React from "react";
 import { text } from "@storybook/addon-knobs";
+
 import Heading from "./Heading";
 
 export default {
@@ -25,7 +26,7 @@ export const usage = () => (
             <h5>{text("Title 5", "Título 5")}</h5>
         </Heading>
         <Heading>
-            <h6>{text("Title 6s", "Título 6")}</h6>
+            <h6>{text("Title 6", "Título 6")}</h6>
         </Heading>
     </div>
 );
