@@ -6,12 +6,16 @@ import { FaCar, FaKey, FaMapMarkedAlt, FaAccessibleIcon } from "react-icons/fa";
 import Hero from "components/molecules/Hero";
 import Heading from "components/atoms/Heading";
 import Button from "components/atoms/Button";
+
 import BgCarImage from "assets/street.jpg";
+import AboutVideo from "assets/AboutVideo.mp4";
 
 import Grid from "components/atoms/Grid";
 import Feature from "components/atoms/Feature";
 
 import Section from "components/molecules/Section";
+
+import Footer from "components/organisms/Footer";
 
 const Home = () => (
     <>
@@ -57,6 +61,36 @@ const Home = () => (
                 </Feature>
             </Grid>
         </Section>
+        <Section inverse>
+            <Heading>
+                <h2>Conheça nossos serviços</h2>
+            </Heading>
+        </Section>
+        <Section>
+            <Grid md={2}>
+                <div>
+                    <Heading>
+                        <h2>Nardini auto escola</h2>
+                    </Heading>
+                    <p>
+                        Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet
+                        Lorem ipsum dolor sit amet
+                    </p>
+                    <div>
+                        <Button color="primary">Saiba mais</Button>
+                    </div>
+                </div>
+                <div>
+                    <video src={AboutVideo} width="100%" autoPlay loop />;
+                </div>
+            </Grid>
+        </Section>
+        <Section inverse>
+            <Heading>
+                <h2>Dúvidas recorrentes</h2>
+            </Heading>
+        </Section>
+        <Footer />
     </>
 );
 
