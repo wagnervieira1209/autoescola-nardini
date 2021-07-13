@@ -44,12 +44,13 @@ CardMedia.propTypes = {
     image: PropTypes.string,
 };
 
+//#endregion
+
 const StyledCard = styled.div`
     background-color: #fff;
     border-radius: 4px;
+    overflow: hidden;
 `;
-
-//#endregion
 
 //#region Card
 
