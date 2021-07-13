@@ -10,12 +10,47 @@ import Button from "components/atoms/Button";
 import BgCarImage from "assets/street.jpg";
 import AboutVideo from "assets/AboutVideo.mp4";
 
+import PlaceHolderImage from "stories/assets/car.jpg";
+
 import Grid from "components/atoms/Grid";
 import Feature from "components/atoms/Feature";
 
 import Section from "components/molecules/Section";
-
+import ProductGrid from "components/organisms/ProductGrid";
 import Footer from "components/organisms/Footer";
+
+const products = [
+    {
+        id: 1,
+        title: "1a Habilitação",
+        image: PlaceHolderImage,
+        summary: "Lorem ipsum dolor sit amet",
+    },
+    {
+        id: 2,
+        title: "Moto e carro",
+        image: PlaceHolderImage,
+        summary: "Lorem ipsum dolor sit amet",
+    },
+    {
+        id: 3,
+        title: "Testes práticos",
+        image: PlaceHolderImage,
+        summary: "Lorem ipsum dolor sit amet",
+    },
+    {
+        id: 4,
+        title: "Aulas virtuais",
+        image: PlaceHolderImage,
+        summary: "Lorem ipsum dolor sit amet",
+    },
+    {
+        id: 5,
+        title: "Aulas presenciais",
+        image: PlaceHolderImage,
+        summary: "Lorem ipsum dolor sit amet",
+    },
+];
 
 const Home = () => (
     <>
@@ -64,6 +99,7 @@ const Home = () => (
         <Section inverse>
             <Heading>
                 <h2>Conheça nossos serviços</h2>
+                <ProductGrid products={products} />
             </Heading>
         </Section>
         <Section>
