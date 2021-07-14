@@ -14,7 +14,7 @@ import PlaceHolderImage from "stories/assets/car.jpg";
 
 import Grid from "components/atoms/Grid";
 import Feature from "components/atoms/Feature";
-
+import Accordion, { AccordionGroup } from "components/atoms/Accordion";
 import Section from "components/molecules/Section";
 import ProductGrid from "components/organisms/ProductGrid";
 import Footer from "components/organisms/Footer";
@@ -125,6 +125,32 @@ const Home = () => (
             <Heading>
                 <h2>Dúvidas recorrentes</h2>
             </Heading>
+            <AccordionGroup>
+                <Accordion title="Como eu renovo minha CNH?">
+                    Lorem impsum dolor sit amet claret opsolum Lorem impsum
+                    dolor sit amet claret opsolum Lorem impsum dolor sit amet
+                    claret opsolum Lorem impsum dolor sit amet claret opsolum
+                    Lorem impsum dolor sit amet claret opsolum Lorem impsum
+                    dolor sit amet claret opsolum Lorem impsum dolor sit amet
+                    claret opsolum{" "}
+                </Accordion>
+                <Accordion title="Como faço para renovar minha CNH?">
+                    Lorem impsum dolor sit amet claret opsolum Lorem impsum
+                    dolor sit amet claret opsolum Lorem impsum dolor sit amet
+                    claret opsolum Lorem impsum dolor sit amet claret opsolum
+                    Lorem impsum dolor sit amet claret opsolum Lorem impsum
+                    dolor sit amet claret opsolum Lorem impsum dolor sit amet
+                    claret opsolum{" "}
+                </Accordion>
+                <Accordion title="Fui multado, e agora?">
+                    Lorem impsum dolor sit amet claret opsolum Lorem impsum
+                    dolor sit amet claret opsolum Lorem impsum dolor sit amet
+                    claret opsolum Lorem impsum dolor sit amet claret opsolum
+                    Lorem impsum dolor sit amet claret opsolum Lorem impsum
+                    dolor sit amet claret opsolum Lorem impsum dolor sit amet
+                    claret opsolum{" "}
+                </Accordion>
+            </AccordionGroup>
         </Section>
         <Footer />
     </>
