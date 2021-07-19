@@ -19,20 +19,22 @@ const ProductList = ({ products }) => {
         <>
             <Grid md={3}>
                 {filteresProducts.map((product) => (
-                    <Card key={product.id}>
-                        <CardMedia image={product.image} />
-                        <CardBody>
-                            <Heading>
-                                <h6>{product.title}</h6>
-                            </Heading>
-                            <p>{product.summary}</p>
-                            <div>
-                                <Button color="primary" variant="link">
-                                    Saiba mais
-                                </Button>
-                            </div>
-                        </CardBody>
-                    </Card>
+                    <div key={product.id}>
+                        <Card>
+                            <CardMedia image={product.image} />
+                            <CardBody>
+                                <Heading>
+                                    <h6>{product.title}</h6>
+                                </Heading>
+                                <p>{product.summary}</p>
+                                <div>
+                                    <Button color="primary" variant="link">
+                                        Saiba mais
+                                    </Button>
+                                </div>
+                            </CardBody>
+                        </Card>
+                    </div>
                 ))}
             </Grid>
             {!showAll && (
