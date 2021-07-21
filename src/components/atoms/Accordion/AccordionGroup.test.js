@@ -63,7 +63,7 @@ test("opens accordion with click", async () => {
     expect(screen.queryByText("Child 4")).toBeInTheDocument();
 });
 
-test("opens accordion with click", async () => {
+test("check accordion with click if all is closed", async () => {
     renderGroup(3);
 
     await fireEvent.click(screen.getByText("Title 1"));

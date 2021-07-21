@@ -75,7 +75,7 @@ const Footer = () => (
                     <p>
                         <FooterLink target="_blank" href="">
                             <IconContainer>
-                                <FaBuilding />
+                                <FaFacebookF />
                             </IconContainer>
                             Facebook
                         </FooterLink>

@@ -31,11 +31,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "cover": "yarn test -- --coverage --watchAll=false",
+    "cover": "yarn test --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "chromatic": "chromatic --project-token=7479a344cb16"
+    "chromatic": "chromatic --project-token=7479a344cb16",
+    "lint": "eslint src/**/*.js"
   },
   "eslintConfig": {
     "extends": [
