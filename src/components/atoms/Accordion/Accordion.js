@@ -45,7 +45,7 @@ const Body = styled.div`
 
 const Accordion = ({ title, open: pOpen, onChange, children }) => {
     const [soPpen, setOpen] = useState(false);
-    const isControlled = pOpen != undefined;
+    const isControlled = pOpen !== undefined;
     const open = isControlled ? pOpen : soPpen;
 
     const handleClick = () => {
