@@ -15,8 +15,7 @@ jobs:
 
     steps:
       - checkout
-      - node/install:
-        install-yarn: true
+      - node/install-yarn
       - run: node --version
       - run: yarn --version
 
