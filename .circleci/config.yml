@@ -21,7 +21,22 @@ jobs:
       - codecov/upload:
           file: coverage/*.json
 
+  versioning:
+    docker:
+      - image: circleci/node:14.17.3
+
+    steps:
+      - checkout
+      - run:
+          name: Check package version
+          command: node scripts/check-version wagnervieira1209 autoescola-nardini
+          
 workflows:
   ci:
     jobs:
       - tests
+      - versioning:
+          filters: 
+            branches:
+              ignore: main
+            tags: /.*/
