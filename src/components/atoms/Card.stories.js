@@ -2,14 +2,14 @@ import Section from "components/molecules/Section";
 import React from "react";
 
 import PlaceHolderImage from "stories/assets/car.jpg";
-import Card, { CardBody, CardMedia } from "./Card";
+import Card, { CardBody, CardMedia, CardMediaDescription } from "./Card";
 import Heading from "components/atoms/Heading";
 import Button from "components/atoms/Button";
 
 export default {
     title: "Components/Atoms/Card",
     component: Card,
-    subcomponents: { CardBody, CardMedia },
+    subcomponents: { CardBody, CardMedia, CardMediaDescription },
 };
 
 export const usage = () => (
@@ -30,7 +30,7 @@ export const usage = () => (
     </Section>
 );
 
-export const usageWithMedia = () => (
+export const withMedia = () => (
     <Section inverse>
         <Card>
             <CardMedia image={PlaceHolderImage} />
@@ -45,6 +45,16 @@ export const usageWithMedia = () => (
                     </Button>
                 </div>
             </CardBody>
+        </Card>
+    </Section>
+);
+
+export const onlyMedia = () => (
+    <Section inverse>
+        <Card>
+            <CardMedia image={PlaceHolderImage}>
+                <CardMediaDescription>Descrição da imagem</CardMediaDescription>
+            </CardMedia>
         </Card>
     </Section>
 );
