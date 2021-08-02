@@ -1,5 +1,6 @@
 import React from "react";
 //import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 import { FaCar, FaKey, FaMapMarkedAlt, FaAccessibleIcon } from "react-icons/fa";
 
@@ -113,7 +114,7 @@ const Home = () => (
                         Lorem ipsum dolor sit amet
                     </p>
                     <div>
-                        <Button color="primary">Saiba mais</Button>
+                        <Button as={Link} to="/sobre" color="primary">Saiba mais</Button>
                     </div>
                 </div>
                 <div>
