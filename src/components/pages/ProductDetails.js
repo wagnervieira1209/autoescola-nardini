@@ -45,7 +45,7 @@ const ProductDetails = () => {
         <>
             <Hero image={BgCarImage}>
                 <Heading>
-                    <h1>Nome do Serviço</h1>
+                    <h1>Nomes Do Serviço</h1>
                 </Heading>
                 <BreadCrump
                     items={[
