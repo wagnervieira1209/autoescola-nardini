@@ -1,6 +1,6 @@
 {
   "name": "autoescola-nardini",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "@storybook/addon-actions": "^6.2.9",
@@ -12,10 +12,12 @@
     "@storybook/node-logger": "^6.2.9",
     "@storybook/preset-create-react-app": "^3.1.7",
     "@storybook/react": "^6.2.9",
+    "@svgr/cli": "^5.5.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^13.1.9",
     "chromatic": "^5.10.0-canary.0",
+    "history": "^5.0.0",
     "jest-styled-components": "^7.0.4",
     "prettier": "^2.3.0",
     "prop-types": "^15.7.2",
@@ -23,6 +25,7 @@
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
+    "react-router-dom": "^6.0.0-beta.0",
     "react-scripts": "4.0.3",
     "styled-components": "^5.3.0",
     "web-vitals": "^1.1.2"
@@ -36,7 +39,8 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "chromatic": "chromatic --exit-zero-on-changes",
-    "lint": "eslint src/**/*.js"
+    "lint": "eslint src/**/*.js",
+    "svg": "svgr --icon --replace-attr-values '#ffc107=currentColor' -d src/draws/"
   },
   "eslintConfig": {
     "extends": [

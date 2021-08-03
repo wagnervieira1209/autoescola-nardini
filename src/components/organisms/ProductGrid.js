@@ -6,6 +6,7 @@ import Card, { CardBody, CardMedia } from "components/atoms/Card";
 import Heading from "components/atoms/Heading";
 import Button from "components/atoms/Button";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const ToolBar = styled.div`
     margin-top: 40px;
@@ -15,6 +16,7 @@ const ToolBar = styled.div`
 const ProductList = ({ products }) => {
     const [showAll, setShowAll] = useState(false);
     const filteresProducts = showAll ? products : products.slice(0, 3);
+
     return (
         <>
             <Grid md={3}>
@@ -28,7 +30,12 @@ const ProductList = ({ products }) => {
                                 </Heading>
                                 <p>{product.summary}</p>
                                 <div>
-                                    <Button color="primary" variant="link">
+                                    <Button
+                                        color="primary"
+                                        variant="link"
+                                        as={Link}
+                                        to="/servicos"
+                                    >
                                         Saiba mais
                                     </Button>
                                 </div>
