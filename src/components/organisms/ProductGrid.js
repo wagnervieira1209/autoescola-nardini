@@ -7,6 +7,7 @@ import Heading from "components/atoms/Heading";
 import Button from "components/atoms/Button";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import ProductType from "types/ProductType";
 
 const ToolBar = styled.div`
     margin-top: 40px;
@@ -34,7 +35,7 @@ const ProductList = ({ products }) => {
                                         color="primary"
                                         variant="link"
                                         as={Link}
-                                        to="/servicos"
+                                        to={`/servicos/${product.slang}`}
                                     >
                                         Saiba mais
                                     </Button>
@@ -65,14 +66,7 @@ ProductList.defaultProps = {
 };
 
 ProductList.propTypes = {
-    products: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-            image: PropTypes.string,
-            title: PropTypes.string,
-            summary: PropTypes.string,
-        })
-    ),
+    products: PropTypes.arrayOf(ProductType),
 };
 
 export default ProductList;

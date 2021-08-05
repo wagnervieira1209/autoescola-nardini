@@ -17,6 +17,7 @@ import Callout, {
 } from "components/atoms/Callout";
 
 import SpeedImage from "draws/Speed";
+import ProductType from "types/ProductType";
 
 const PinnedList = styled.ul`
     list-style: none;
@@ -36,17 +37,17 @@ const PinnedItem = styled.li`
     }
 `;
 
-const ProductDetails = () => (
+const ProductDetails = ({ product }) => (
     <>
         <Hero image={BgCarImage}>
             <Heading>
-                <h1>Nomes Do Serviço</h1>
+                <h1>{product.title}</h1>
             </Heading>
             <BreadCrump
                 items={[
                     { label: "Início", link: "/" },
                     { label: "Serviços" },
-                    { label: "Nome do Serviço" },
+                    { label: product.title },
                 ]}
             />
         </Hero>
@@ -114,8 +115,12 @@ const ProductDetails = () => (
     </>
 );
 
-ProductDetails.defaultProps = {};
+ProductDetails.defaultProps = {
+    product: {},
+};
 
-ProductDetails.propTypes = {};
+ProductDetails.propTypes = {
+    product: ProductType,
+};
 
 export default ProductDetails;
