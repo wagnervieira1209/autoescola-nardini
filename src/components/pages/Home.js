@@ -17,7 +17,7 @@ import Accordion, { AccordionGroup } from "components/atoms/Accordion";
 import Section from "components/molecules/Section";
 import ProductGrid from "components/organisms/ProductGrid";
 import Footer from "components/organisms/Footer";
-import ProductType from "types/ProductType";
+import ProductType from "models/types/ProductType";
 
 const Home = ({ products }) => (
     <>

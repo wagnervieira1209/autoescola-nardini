@@ -17,7 +17,7 @@ import Callout, {
 } from "components/atoms/Callout";
 
 import SpeedImage from "draws/Speed";
-import ProductType from "types/ProductType";
+import ProductType from "models/types/ProductType";
 
 const PinnedList = styled.ul`
     list-style: none;
