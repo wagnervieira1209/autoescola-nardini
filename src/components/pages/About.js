@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import PropTypes from "prop-types";
+import React from "react";
 import styled from "styled-components";
 import BreadCrump from "components/atoms/BreadCrump";
 
