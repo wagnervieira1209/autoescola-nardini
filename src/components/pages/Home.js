@@ -1,5 +1,5 @@
 import React from "react";
-//import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 import { FaCar, FaKey, FaMapMarkedAlt, FaAccessibleIcon } from "react-icons/fa";
@@ -11,49 +11,15 @@ import Button from "components/atoms/Button";
 import BgCarImage from "assets/street.jpg";
 import AboutVideo from "assets/AboutVideo.mp4";
 
-import PlaceHolderImage from "stories/assets/car.jpg";
-
 import Grid from "components/atoms/Grid";
 import Feature from "components/atoms/Feature";
 import Accordion, { AccordionGroup } from "components/atoms/Accordion";
 import Section from "components/molecules/Section";
 import ProductGrid from "components/organisms/ProductGrid";
 import Footer from "components/organisms/Footer";
+import ProductType from "models/types/ProductType";
 
-const products = [
-    {
-        id: 1,
-        title: "1a Habilitação",
-        image: PlaceHolderImage,
-        summary: "Lorem ipsum dolor sit amet",
-    },
-    {
-        id: 2,
-        title: "Moto e carro",
-        image: PlaceHolderImage,
-        summary: "Lorem ipsum dolor sit amet",
-    },
-    {
-        id: 3,
-        title: "Testes práticos",
-        image: PlaceHolderImage,
-        summary: "Lorem ipsum dolor sit amet",
-    },
-    {
-        id: 4,
-        title: "Aulas virtuais",
-        image: PlaceHolderImage,
-        summary: "Lorem ipsum dolor sit amet",
-    },
-    {
-        id: 5,
-        title: "Aulas presenciais",
-        image: PlaceHolderImage,
-        summary: "Lorem ipsum dolor sit amet",
-    },
-];
-
-const Home = () => (
+const Home = ({ products }) => (
     <>
         <Hero image={BgCarImage}>
             <Heading>
@@ -166,8 +132,12 @@ const Home = () => (
     </>
 );
 
-//Home.defaultProps = {};
+Home.defaultProps = {
+    products: [],
+};
 
-//Home.propTypes = {};
+Home.propTypes = {
+    products: PropTypes.arrayOf(ProductType),
+};
 
 export default Home;

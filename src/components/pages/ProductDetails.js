@@ -1,10 +1,7 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styled from "styled-components";
 import { FaIdCard, FaHome, FaScroll } from "react-icons/fa";
 import BreadCrump from "components/atoms/BreadCrump";
-
-import { useScrollToTop } from "hooks/scroll";
 
 import Hero from "components/molecules/Hero";
 import BgCarImage from "assets/street.jpg";
@@ -19,6 +16,7 @@ import Callout, {
 } from "components/atoms/Callout";
 
 import SpeedImage from "draws/Speed";
+import ProductType from "models/types/ProductType";
 
 const PinnedList = styled.ul`
     list-style: none;
@@ -38,91 +36,90 @@ const PinnedItem = styled.li`
     }
 `;
 
-const ProductDetails = () => {
-    useScrollToTop();
+const ProductDetails = ({ product }) => (
+    <>
+        <Hero image={BgCarImage}>
+            <Heading>
+                <h1>{product.title}</h1>
+            </Heading>
+            <BreadCrump
+                items={[
+                    { label: "Início", link: "/" },
+                    { label: "Serviços" },
+                    { label: product.title },
+                ]}
+            />
+        </Hero>
+        <Section>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Voluptatem dolores nostrum mollitia voluptatibus incidunt magnam
+                ullam, quos asperiores perferendis! Asperiores ea tempore, ullam
+                quos natus ipsa minima mollitia adipisci totam.
+            </p>
+            <p>
+                Commodi eaque vitae consequatur quaerat ex, praesentium
+                voluptates. Ad rerum animi voluptatem. Vel quidem doloremque
+                accusantium consequuntur impedit animi similique doloribus
+                repudiandae, deserunt aspernatur voluptatum dolorem quos
+                quisquam placeat quibusdam.
+            </p>
+            <p>
+                Debitis quia animi placeat voluptas et at, est vel. Laudantium
+                corporis quia architecto. Asperiores eum eos reprehenderit vitae
+                deserunt ut, totam est sint quaerat saepe quis, voluptas autem
+                minima aperiam.
+            </p>
+            <h5>Documentos necessários:</h5>
+            <PinnedList>
+                <PinnedItem>
+                    <FaIdCard />
+                    RG
+                </PinnedItem>
+                <PinnedItem>
+                    <FaIdCard />
+                    CPF
+                </PinnedItem>
+                <PinnedItem>
+                    <FaScroll />
+                    Certidão de nascimento ou casamento
+                </PinnedItem>
+                <PinnedItem>
+                    <FaHome />
+                    Comprovante de residência
+                </PinnedItem>
+            </PinnedList>
+        </Section>
+        <Section inverse>
+            <Callout>
+                <CalloutBody>
+                    <h6>Faça sua matrícula agora mesmo</h6>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Porro maxime consectetur quam minima nisi, dolores illo,
+                        eos laudantium omnis placeat excepturi perspiciatis
+                        cupiditate ab praesentium vel corrupti accusantium
+                        atque. Consequuntur.
+                    </p>
+                    <CalloutActions>
+                        <Button color="primary">matricular</Button>
+                    </CalloutActions>
+                </CalloutBody>
+                <CalloutMedia>
+                    <SpeedImage />
+                </CalloutMedia>
+            </Callout>
+        </Section>
+        <Footer />
+    </>
+);
 
-    return (
-        <>
-            <Hero image={BgCarImage}>
-                <Heading>
-                    <h1>Nomes Do Serviço</h1>
-                </Heading>
-                <BreadCrump
-                    items={[
-                        { label: "Início", link: "/" },
-                        { label: "Serviços" },
-                        { label: "Nome do Serviço" },
-                    ]}
-                />
-            </Hero>
-            <Section>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Voluptatem dolores nostrum mollitia voluptatibus incidunt
-                    magnam ullam, quos asperiores perferendis! Asperiores ea
-                    tempore, ullam quos natus ipsa minima mollitia adipisci
-                    totam.
-                </p>
-                <p>
-                    Commodi eaque vitae consequatur quaerat ex, praesentium
-                    voluptates. Ad rerum animi voluptatem. Vel quidem doloremque
-                    accusantium consequuntur impedit animi similique doloribus
-                    repudiandae, deserunt aspernatur voluptatum dolorem quos
-                    quisquam placeat quibusdam.
-                </p>
-                <p>
-                    Debitis quia animi placeat voluptas et at, est vel.
-                    Laudantium corporis quia architecto. Asperiores eum eos
-                    reprehenderit vitae deserunt ut, totam est sint quaerat
-                    saepe quis, voluptas autem minima aperiam.
-                </p>
-                <h5>Documentos necessários:</h5>
-                <PinnedList>
-                    <PinnedItem>
-                        <FaIdCard />
-                        RG
-                    </PinnedItem>
-                    <PinnedItem>
-                        <FaIdCard />
-                        CPF
-                    </PinnedItem>
-                    <PinnedItem>
-                        <FaScroll />
-                        Certidão de nascimento ou casamento
-                    </PinnedItem>
-                    <PinnedItem>
-                        <FaHome />
-                        Comprovante de residência
-                    </PinnedItem>
-                </PinnedList>
-            </Section>
-            <Section inverse>
-                <Callout>
-                    <CalloutBody>
-                        <h6>Faça sua matrícula agora mesmo</h6>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Porro maxime consectetur quam minima nisi,
-                            dolores illo, eos laudantium omnis placeat excepturi
-                            perspiciatis cupiditate ab praesentium vel corrupti
-                            accusantium atque. Consequuntur.
-                        </p>
-                        <CalloutActions>
-                            <Button color="primary">matricular</Button>
-                        </CalloutActions>
-                    </CalloutBody>
-                    <CalloutMedia>
-                        <SpeedImage />
-                    </CalloutMedia>
-                </Callout>
-            </Section>
-            <Footer />
-        </>
-    );
+ProductDetails.defaultProps = {
+    product: {},
 };
 
-ProductDetails.defaultProps = {};
-
-ProductDetails.propTypes = {};
+ProductDetails.propTypes = {
+    product: ProductType,
+};
 
 export default ProductDetails;
